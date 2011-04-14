@@ -66,6 +66,7 @@ class Emacs < Formula
 
     if ARGV.include? "--cocoa"
       args << "--with-ns" << "--disable-ns-self-contained"
+      system "./autogen.sh"
       system "./configure", *args
       system "make bootstrap"
       system "make install"
